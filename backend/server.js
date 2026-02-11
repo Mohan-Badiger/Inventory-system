@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 
+import storePrRoutes from './routes/storepr.routes.js';
+import storeGrnRoutes from './routes/storegrn.routes.js';
+
 dotenv.config();
 
 const app = express();
@@ -20,14 +23,8 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-// routes
-// import prRoutes from './routes/pr.routes.js';
-// import poRoutes from './routes/po.routes.js';
-// import grnRoutes from './routes/grn.routes.js';
-
-// app.use('/api/pr', prRoutes);
-// app.use('/api/po', poRoutes);
-// app.use('/api/grn', grnRoutes);
+app.use('/api/storepr', storePrRoutes);
+app.use('/api/storegrn', storeGrnRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
