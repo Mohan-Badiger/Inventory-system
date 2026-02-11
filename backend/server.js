@@ -1,13 +1,15 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import cors from "cors";
 
-import storePrRoutes from './routes/storepr.routes.js';
 import storeGrnRoutes from './routes/storegrn.routes.js';
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
+
 
 // middleware
 app.use(express.json());
@@ -23,7 +25,6 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-app.use('/api/storepr', storePrRoutes);
 app.use('/api/storegrn', storeGrnRoutes);
 
 app.listen(PORT, () => {
