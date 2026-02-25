@@ -126,12 +126,16 @@ http://localhost:5173
 
 ---
 
-## 🧮 GRN Logic
+##  GRN Logic
 
 ✔ Dynamic item entry
+
 ✔ Auto item total calculation
+
 ✔ Grand total calculation
+
 ✔ Grand total converted into words
+
 ✔ Data persisted in MongoDB
 
 ---
